@@ -11,6 +11,7 @@ Task 1:
     Table settings: Default settings
     
   After completion the application setup, it stores the following information in the DynamoDB table:
+    
     id: The ID of the post.
     status: UPDATED or PROCESSING, depending on whether an MP3 file has already been created.
     text: The post's text, for which an audio file is being created.
@@ -25,6 +26,7 @@ Task 3: Creation of an SNS topic
 Task 4: Create a new post Lambda function
     The first Lambda function you create is the entry point for the application. It receives information about new posts that should be converted into audio files.
     The Lambda function does the following:
+      
       Retrieves two input parameters:
       Voice: One of dozens of voices that are supported by Amazon Polly
       Text: The text of the post that we want to convert into an audio file
@@ -34,6 +36,7 @@ Task 4: Create a new post Lambda function
       
 Task 5: Create a convert to audio Lambda function that is stored in the DynamoDB table into an audio file.
     The Lambda function does the following:
+      
       Retrieves the ID of the DynamoDB item (post ID) which should be converted into an audio file from the input message (SNS event)
       Retrieves the item from DynamoDB
       Converts the text into an audio stream
