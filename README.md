@@ -10,7 +10,7 @@ Task 1:
     Partition key: id (String)
     Table settings: Default settings
     
-    After completion the application setup, it stores the following information in the DynamoDB table:
+  After completion the application setup, it stores the following information in the DynamoDB table:
     id: The ID of the post.
     status: UPDATED or PROCESSING, depending on whether an MP3 file has already been created.
     text: The post's text, for which an audio file is being created.
