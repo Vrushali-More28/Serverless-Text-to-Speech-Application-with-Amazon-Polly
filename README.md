@@ -42,4 +42,34 @@ Task 5: Create a convert to audio Lambda function that is stored in the DynamoDB
       Converts the text into an audio stream
       Places the audio (MP3) file into an S3 bucket
       Updates the DynamoDB table with a reference to the S3 bucket and the new status
+
+Task 6:  Test the functions
+
+      Manually trigger the New Post Lambda function
+      It stores data in DynamoDB and send a message to the SNS topic
+      SNS triggers the Convert To Audio function, which uses Polly to create an audio file and store it in the S3 bucket    
+
+Task 7: Create a get post Lambda function
+      The final Get Post Lambda function provides a method for retrieving information about posts from the database.
+  
+      Function name: PostReader_GetPost
+      Runtime: Python 3.12
+      Expand Change default execution role
+      Execution role: Choose Use an existing role
+      Existing role: Choose Lab-Lambda-Role
+
+Task 8: Expose the Lambda function as a RESTful web service
     
+      ◦ Manually triggered the New Post Lambda function, which stored data in DynamoDB and sent a message to Amazon SNS.
+      ◦ Verified that SNS successfully triggered the Convert To Audio Lambda function, which used Amazon Polly to generate an audio file and store it in Amazon S3.
+      ◦ Checked DynamoDB entries to ensure successful execution and that the post was updated with the S3 audio file URL.
+      ◦ Used AWS Lambda monitoring and CloudWatch logs to validate function execution and debug any issues.
+      ◦ Downloaded and tested the MP3 file from S3 to confirm correct audio conversion.
+
+Task 9: Create a Serverless User Interface
+
+      ◦ Developed the PostReader_GetPost Lambda function to retrieve post details from DynamoDB.
+      ◦ Configured the function using Python 3.12 and assigned the appropriate IAM execution role.
+      ◦ Implemented functionality to fetch post details using postId, with an option to retrieve all posts.
+      ◦ Set up environment variables for database configuration.
+      ◦ Successfully tested the function to verify post retrieval, including S3 URLs for audio files.
